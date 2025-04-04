@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Designs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="giris_envanTrack">Envan Track\'e Giriş</string>
+    <string name="giris_cumlesi">Varlıklarınızı koruyun ve yönetin</string>
+    <string name="eposta">E-posta</string>
+    <string name="sifre">Şifre</string>
+    <string name="giris">Giriş</string>
+    <string name="hesabinizyokmu">Hesabınız yok mu ?</string>
+    <string name="kayitol">Kayıt Ol</string>
+    
+</resources>
