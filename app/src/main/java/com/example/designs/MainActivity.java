@@ -23,10 +23,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Uygulamanın herhangi bir Activity'sinde
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.c1)); // status bar rengini arka plan rengi ile ayni yapma
-        window.setNavigationBarColor(ContextCompat.getColor(this, R.color.c1)); // navigation bar rengini arka plan rengi ile ayni yapma
+
 
 
     }

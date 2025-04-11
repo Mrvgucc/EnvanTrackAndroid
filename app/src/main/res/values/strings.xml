@@ -9,5 +9,14 @@
     <string name="giris">Giriş</string>
     <string name="hesabinizyokmu">Hesabınız yok mu ?</string>
     <string name="kayitol">Kayıt Ol</string>
+    <string name="hosgeldin">Hoşgeldin Merve !</string>
+    <string name="kullaniciAdi">merve@gmail.com</string>
+    <string name="tumIslemler">Tüm İşlemler</string>
+    <string name="zimmetlerim">Zimmetlerim</string>
+    <string name="tumDemirbaslar">Tüm Demirbaşlar</string>
+    <string name="kategoriCesidi">Kategori Çeşidi : </string>
+    <string name="toplamZimmet">Toplam Zimmet : </string>
+    <string name="toplamDemirbas">Toplam Demirbaş : </string>
+
 
 </resources>

@@ -6,6 +6,7 @@ import android.graphics.RenderEffect;
 import android.graphics.Shader;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,10 +34,16 @@ public class LoginFragment extends Fragment {
 
     private boolean gozAcik = false;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false);
+
+
+        Window window = requireActivity().getWindow();
+        window.setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.c1)); // status bar rengini arka plan rengi ile ayni yapma
+        window.setNavigationBarColor(ContextCompat.getColor(requireContext(), R.color.c1)); // navigation bar rengini arka plan rengi ile ayni yapma
 
 
         tasarim.setLoginFragmentNesnesi(this); // fragment data icerisinde olusturdugumuz nesnenin calisabilmesi icin burada yetki verilir.
