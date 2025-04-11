@@ -218,13 +218,15 @@
                                 android:id="@+id/textView15"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/toplamDemirbas" />
+                                android:text="@string/toplamDemirbas"
+                                android:textSize="15sp"/>
 
                             <TextView
                                 android:id="@+id/textView14"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/kategoriCesidi" />
+                                android:text="@string/kategoriCesidi"
+                                android:textSize="15sp"/>
                         </LinearLayout>
 
                     </LinearLayout>
