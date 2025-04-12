@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainManagerNesnesi"
+            type="com.example.designs.MainManagerFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c3"
+        tools:context=".MainManagerFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="55dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/bg4"
+                android:src="@drawable/person"
+                android:padding="2dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="6dp"
+                android:layout_weight="10"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/hosgeldin"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kullaniciAdi"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewNotification"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@drawable/notifications" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/bg2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yoneticiIslemleri"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/kesiklicizgi" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg3"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/demisrbasIslemleri"
+                                android:textSize="17sp" />
+
+                            <ImageView
+                                android:id="@+id/imageView12"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/assetoperations" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:paddingVertical="15dp"
+                            android:src="@drawable/kesiklicizgi" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/button"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/demirbasEkle"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/button2"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/demirbasSil"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/button3"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/demirbasGuncelle"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/button5"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="15dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/demirbasListele"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg3"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/personelIslemleri"
+                                android:textSize="17sp" />
+
+                            <ImageView
+                                android:id="@+id/imageView15"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/group" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:paddingVertical="15dp"
+                            android:src="@drawable/kesiklicizgi" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/buttonPersonelEkle"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/personelEkle"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+
+                                android:id="@+id/buttonPersonelSil"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/personelSil"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/buttonPersonelGuncelle"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/personelGuncelle"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/buttonPersonelListele"
+                                android:layout_width="135dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="15dp"
+                                android:background="@drawable/bg5"
+                                android:text="@string/personelListele"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

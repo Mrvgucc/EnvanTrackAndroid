@@ -91,19 +91,25 @@ public class LoginFragment extends Fragment {
                         editor.putString("email", login.getEmail());
                         editor.putString("status", login.getStatus());
                         editor.putString("phone",login.getPhone());
-                        editor.putString("status",login.getStatus());
                         editor.commit();
                         Log.e("Token Preferences a kaydedildi" , accessToken);
                         tasarim.progressBar.setVisibility(View.GONE);
-                        Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainPersonalFragment);
+                        view.setVisibility(View.GONE);
+                        if (login.getStatus().equals("personal")){
+                            Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainPersonalFragment);
+                        }
+                        else {
+                            Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainManagerFragment);
+                        }
                         // login basarili oldugu zaman diger ekran yuklenene kadar circular progressbar ekranda gorunsun
 
                     }
 
                     @Override
                     public void onError(String errorMessage) {
-                        Log.e("Login Error", errorMessage);
+                        Log.e("Login Error onError", errorMessage);
                         tasarim.progressBar.setVisibility(View.GONE);
+                        view.setVisibility(View.GONE);
 
                     }
                 });

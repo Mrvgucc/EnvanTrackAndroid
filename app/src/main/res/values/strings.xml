@@ -9,7 +9,7 @@
     <string name="giris">Giriş</string>
     <string name="hesabinizyokmu">Hesabınız yok mu ?</string>
     <string name="kayitol">Kayıt Ol</string>
-    <string name="hosgeldin">Hoşgeldin Merve !</string>
+    <string name="hosgeldin">Hoşgeldin, </string>
     <string name="kullaniciAdi">merve@gmail.com</string>
     <string name="tumIslemler">Tüm İşlemler</string>
     <string name="zimmetlerim">Zimmetlerim</string>
@@ -17,6 +17,20 @@
     <string name="kategoriCesidi">Kategori Çeşidi : </string>
     <string name="toplamZimmet">Toplam Zimmet : </string>
     <string name="toplamDemirbas">Toplam Demirbaş : </string>
+    <string name="yoneticiIslemleri">Yönetici İşlemleri</string>
+    <string name="personelIslemleri">Personel İşlemleri</string>
+    <string name="demisrbasIslemleri">Demirbaş İşlemleri</string>
+    <string name="demirbasEkle">Demirbaş Ekle</string>
+    <string name="demirbasSil">Demirbaş Sil</string>
+    <string name="demirbasGuncelle">Demirbaş Güncelle</string>
+    <string name="demirbasListele">Demirbaş Listele</string>
+    <string name="personelEkle">Personel Ekle</string>
+    <string name="personelSil">Personel Sil</string>
+    <string name="personelGuncelle">Personel Güncelle</string>
+    <string name="personelListele">Personel Listele</string>
+    <string name="personelIslemleriEkle">Personel Islemleri / Personel Ekle</string>
+    <string name="adiniz">Adınız *</string>
+    <string name="adiniziGiriniz">Adınızı Giriniz</string>
 
 
 </resources>

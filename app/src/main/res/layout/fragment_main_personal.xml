@@ -59,8 +59,8 @@
 
         <ImageView
             android:id="@+id/imageViewNotification"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/notifications" />

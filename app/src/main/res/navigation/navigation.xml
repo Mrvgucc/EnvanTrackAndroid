@@ -13,10 +13,27 @@
         <action
             android:id="@+id/action_loginFragment2_to_mainPersonalFragment"
             app:destination="@id/mainPersonalFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_mainManagerFragment"
+            app:destination="@id/mainManagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainPersonalFragment"
         android:name="com.example.designs.MainPersonalFragment"
         android:label="fragment_main_personal"
         tools:layout="@layout/fragment_main_personal" />
+    <fragment
+        android:id="@+id/mainManagerFragment"
+        android:name="com.example.designs.MainManagerFragment"
+        android:label="MainManagerFragment"
+        tools:layout="@layout/fragment_main_manager">
+        <action
+            android:id="@+id/action_mainManagerFragment_to_personelEkleFragment"
+            app:destination="@id/personelEkleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personelEkleFragment"
+        android:name="com.example.designs.PersonelEkleFragment"
+        android:label="PersonelEkleFragment"
+        tools:layout="@layout/fragment_personel_ekle"/>
 </navigation>
