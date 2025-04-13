@@ -70,4 +70,29 @@ public class Islemler {
         void onError(String errorMessage);
     }
 
+    public void getEmployeeInfo(String token, final EmployeeInfoCallback callback) {
+        methodInterface.employeeInfo(token).enqueue(new Callback<EmployeeInfo>() {
+            @Override
+            public void onResponse(Call<EmployeeInfo> call, Response<EmployeeInfo> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body());
+                } else {
+                    callback.onError("Yanıt alınamadı: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<EmployeeInfo> call, Throwable t) {
+                callback.onError("İstek başarısız: " + t.getMessage());
+            }
+        });
+    }
+
+    public interface EmployeeInfoCallback {
+        void onSuccess(EmployeeInfo employeeInfo);
+        void onError(String errorMessage);
+    }
+
 }
+
+

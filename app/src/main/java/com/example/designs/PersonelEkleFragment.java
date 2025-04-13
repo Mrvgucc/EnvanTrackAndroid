@@ -1,5 +1,6 @@
 package com.example.designs;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -18,6 +19,8 @@ import com.example.designs.databinding.FragmentPersonelEkleBinding;
 public class PersonelEkleFragment extends Fragment {
 
     private FragmentPersonelEkleBinding tasarim;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +39,8 @@ public class PersonelEkleFragment extends Fragment {
                 navController.popBackStack(); // Bir onceki sayfaya gecis
             }
         });
+
+
 
         return tasarim.getRoot();
     }

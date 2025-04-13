@@ -31,6 +31,19 @@
     <string name="personelIslemleriEkle">Personel Islemleri / Personel Ekle</string>
     <string name="adiniz">Adınız *</string>
     <string name="adiniziGiriniz">Adınızı Giriniz</string>
-
+    <string name="soyadiniz">Soyadınız *</string>
+    <string name="soyadiniziGiriniz">Soyadınızı Giriniz</string>
+    <string name="eklemekIstediginiz">Eklemek istediğiniz personelin bilgilerini giriniz.</string>
+    <string name="emailiniz">E-mail Adresiniz *</string>
+    <string name="emailiniziGiriniz">E-mail Adresinizi Giriniz</string>
+    <string name="telefonunuz">Telefon Numaranız *</string>
+    <string name="telefonunuzuGiriniz">Telefon Numaranızı Giriniz</string>
+    <string name="statu">Statüyü Seçiniz *</string>
+    <string name="personel">Personel</string>
+    <string name="yonetici">Yönetici</string>
+    <string name="sifreniz">Şifreniz *</string>
+    <string name="sifreniziGiriniz">Şifrenizi Giriniz</string>
+    <string name="tekrarSifreniz">Tekrar Şifreniz *</string>
+    <string name="sifreniziTekrarGiriniz">Şifrenizi Tekrar Giriniz</string>
 
 </resources>

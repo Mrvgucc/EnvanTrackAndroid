@@ -53,6 +53,8 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.gson)
 
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.7")
+
     
 
 

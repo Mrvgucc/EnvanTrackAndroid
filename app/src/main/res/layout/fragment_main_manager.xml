@@ -8,6 +8,10 @@
         <variable
             name="mainManagerNesnesi"
             type="com.example.designs.MainManagerFragment" />
+        <variable
+            name="employeeInfo"
+            type="String" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

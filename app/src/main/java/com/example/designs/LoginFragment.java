@@ -86,6 +86,7 @@ public class LoginFragment extends Fragment {
                         sp = getActivity().getSharedPreferences("token", Context.MODE_PRIVATE);
                         editor = sp.edit();
                         editor.putString("accesToken" , accessToken);
+                        editor.putString("token_type", login.getTokenType());
                         editor.putString("name", login.getName());
                         editor.putString("surname", login.getSurname());
                         editor.putString("email", login.getEmail());
