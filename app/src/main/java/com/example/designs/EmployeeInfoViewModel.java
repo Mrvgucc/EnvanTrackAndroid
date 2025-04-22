@@ -24,6 +24,7 @@ public class EmployeeInfoViewModel extends ViewModel {
         return employeeInfoMutableLiveData;
     }
 
+
     public void loadEmployeeInfo(String token) {
         islem.getEmployeeInfo(token, new Islemler.EmployeeInfoCallback() {
             @Override

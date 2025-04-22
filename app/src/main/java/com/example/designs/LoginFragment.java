@@ -134,7 +134,7 @@ public class LoginFragment extends Fragment {
         }
         else {
             sifre.setTransformationMethod(null); // veya new HideReturnsTransformationMethod()
-            goz.setImageResource(R.drawable.visibility_off);
+            goz.setImageResource(R.drawable.visibilityoff);
 
         }
         gozAcik = !gozAcik; // durum degistir

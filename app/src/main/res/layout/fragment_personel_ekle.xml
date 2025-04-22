@@ -303,27 +303,33 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <CheckBox
-                                android:id="@+id/radioButtonPersonel"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="7dp"
-                                android:layout_marginTop="7dp"
-                                android:background="@drawable/bg8"
-                                android:padding="10dp"
-                                android:text="@string/personel"
-                                android:textSize="16sp" />
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
 
-                            <CheckBox
-                                android:id="@+id/radioButtonGelenYonetici"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="7dp"
-                                android:layout_marginTop="7dp"
-                                android:background="@drawable/bg8"
-                                android:paddingHorizontal="10dp"
-                                android:text="@string/yonetici"
-                                android:textSize="16sp" />
+                                <RadioButton
+                                    android:id="@+id/radioButtonGelenPersonel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/bg8"
+                                    android:paddingHorizontal="7dp"
+                                    android:text="@string/personel"
+                                    android:textSize="16sp" />
+
+                                <RadioButton
+                                    android:id="@+id/radioButtonGelenYonetici"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:background="@drawable/bg8"
+                                    android:paddingHorizontal="7dp"
+                                    android:text="@string/yonetici"
+                                    android:textSize="16sp" />
+                            </RadioGroup>
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -360,17 +366,36 @@
                             android:text="@string/sifreniz"
                             android:textSize="18sp" />
 
-                        <EditText
-                            android:id="@+id/editTextGelenSifre"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:background="@drawable/bg6"
-                            android:ems="10"
-                            android:hint="@string/sifreniziGiriniz"
-                            android:inputType="text"
-                            android:padding="7dp"
-                            android:textSize="16sp" />
+                            android:layout_marginTop="5dp">
+
+                            <EditText
+                                android:id="@+id/editTextGelenSifre"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:ems="10"
+                                android:hint="@string/sifreniziGiriniz"
+                                android:inputType="textPassword"
+                                android:padding="5dp"
+                                android:textSize="16sp"
+                                android:background="@drawable/bg9"
+                                android:layout_weight="4"/>
+
+                            <ImageView
+                                android:id="@+id/imageView17"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:onClick="@{() -> personelEkleNesnesi.gozDegistirme()}"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/visibility" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -406,17 +431,36 @@
                             android:text="@string/tekrarSifreniz"
                             android:textSize="18sp" />
 
-                        <EditText
-                            android:id="@+id/editTextGelenSifreTekrar"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
                             android:background="@drawable/bg6"
-                            android:ems="10"
-                            android:hint="@string/sifreniziTekrarGiriniz"
-                            android:inputType="text"
-                            android:padding="7dp"
-                            android:textSize="16sp" />
+                            android:layout_marginTop="5dp">
+
+                            <EditText
+                                android:id="@+id/editTextGelenSifreTekrar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:ems="10"
+                                android:hint="@string/sifreniziTekrarGiriniz"
+                                android:inputType="textPassword"
+                                android:padding="5dp"
+                                android:textSize="16sp"
+                                android:background="@drawable/bg9"
+                                android:layout_weight="4"/>
+
+                            <ImageView
+                                android:id="@+id/imageView23"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:onClick="@{() -> personelEkleNesnesi.gozDegistirme()}"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/visibility" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -426,7 +470,7 @@
         </ScrollView>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button7"
+            android:id="@+id/buttonPersonelEkleOnay"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginBottom="15dp"

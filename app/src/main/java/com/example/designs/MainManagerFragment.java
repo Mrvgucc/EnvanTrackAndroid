@@ -35,6 +35,9 @@ public class MainManagerFragment extends Fragment {
 
         // olusturlan ViewModel'i baglama islemi:
         viewModel = new ViewModelProvider(this).get(EmployeeInfoViewModel.class);
+        tasarim.setEmployeeInfo(viewModel);
+
+        tasarim.setLifecycleOwner(getViewLifecycleOwner()); // LiveData guncellenince XML otomatik degissin
 
         Window window = requireActivity().getWindow();
         window.setStatusBarColor(ContextCompat.getColor(requireContext(),R.color.c3));
@@ -55,20 +58,8 @@ public class MainManagerFragment extends Fragment {
         // cekilen bu tokenin kimligini dogrulayip yetkilendirme islemini yapalim
 //        Islemler islem2 = new Islemler();
 //        islem2.EmployeeInfo(token);
-        // buradan donen name, surname, phone, email, status degerlerini cekebilmek icin ViewModel yapisina ihtiyacim var
-        viewModel = new ViewModelProvider(this).get(EmployeeInfoViewModel.class);
-        viewModel.getEmployeeInfoLiveData().observe(getViewLifecycleOwner(),employeeInfo -> {
-            if (employeeInfo != null ){
-                tasarim.textView4.setText("Hoşgeldin, " + employeeInfo.getName() + " " + employeeInfo.getSurname());
-                tasarim.textView5.setText(employeeInfo.getEmail());
-            }
-        });
 
         viewModel.loadEmployeeInfo(token); // veri yukleme
-
-
-
-
 
         return tasarim.getRoot();
     }

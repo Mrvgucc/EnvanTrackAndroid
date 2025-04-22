@@ -28,7 +28,7 @@
     <string name="personelSil">Personel Sil</string>
     <string name="personelGuncelle">Personel Güncelle</string>
     <string name="personelListele">Personel Listele</string>
-    <string name="personelIslemleriEkle">Personel Islemleri / Personel Ekle</string>
+    <string name="personelIslemleriEkle">Personel İşlemleri / Personel Ekle</string>
     <string name="adiniz">Adınız *</string>
     <string name="adiniziGiriniz">Adınızı Giriniz</string>
     <string name="soyadiniz">Soyadınız *</string>
@@ -45,5 +45,12 @@
     <string name="sifreniziGiriniz">Şifrenizi Giriniz</string>
     <string name="tekrarSifreniz">Tekrar Şifreniz *</string>
     <string name="sifreniziTekrarGiriniz">Şifrenizi Tekrar Giriniz</string>
+    <string name="personelIslemleriSil">Personel İşlemleri / Personel Sil</string>
+    <string name="silmekIstediginiz">Silmek istediğiniz personelin bilgilerini giriniz</string>
+    <string name="personelID">ID giriniz</string>
+    <string name="personelAdSoyad">Personel adını ve soyadını giriniz</string>
+    <string name="IDBilinmiyorsa">ID bilmiyorsanız ad ve soyad giriniz</string>
+    <string name="personelBul">Personel Bul</string>
+
 
 </resources>

@@ -23,4 +23,7 @@ public interface methodInterface {
     @GET("employeeInfo")
     Call<EmployeeInfo> employeeInfo(@Header("Authorization") String token); // token ile kimlik dogrulama
 
+    @POST("employeeInsert")
+    Call<GenericResponse> personelEkle(@Body PersonelEkleRequest request); // personelEkle
+
 }

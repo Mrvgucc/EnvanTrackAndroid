@@ -93,6 +93,29 @@ public class Islemler {
         void onError(String errorMessage);
     }
 
+    public void personelEkle(PersonelEkleRequest request, final personelEkleCallBack callBack){
+        methodInterface.personelEkle(request).enqueue(new Callback<GenericResponse>() {
+            @Override
+            public void onResponse(Call<GenericResponse> call, Response<GenericResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    callBack.onSuccess(response.body().getMessage());
+                }
+                else {
+                    callBack.onError("Yanıt Alınamadı: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GenericResponse> call, Throwable t) {
+                callBack.onError("İstek başarısız: " + t.getMessage());
+            }
+        });
+    }
+
+    public interface  personelEkleCallBack{
+        void onSuccess(String message); // GenericResponse icerisinde sadece message oldugu icin sadece message gonderildi.
+        void onError(String errorMessage);
+    }
 }
 
 
