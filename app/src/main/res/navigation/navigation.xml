@@ -30,10 +30,18 @@
         <action
             android:id="@+id/action_mainManagerFragment_to_personelEkleFragment"
             app:destination="@id/personelEkleFragment" />
+        <action
+            android:id="@+id/action_mainManagerFragment_to_personelSilFragment"
+            app:destination="@id/personelSilFragment" />
     </fragment>
     <fragment
         android:id="@+id/personelEkleFragment"
         android:name="com.example.designs.PersonelEkleFragment"
         android:label="PersonelEkleFragment"
         tools:layout="@layout/fragment_personel_ekle"/>
+    <fragment
+        android:id="@+id/personelSilFragment"
+        android:name="com.example.designs.PersonelSilFragment"
+        android:label="PersonelSilFragment"
+        tools:layout="@layout/fragment_personel_sil"/>
 </navigation>

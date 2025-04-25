@@ -50,6 +50,13 @@ public class MainManagerFragment extends Fragment {
             }
         });
 
+        tasarim.buttonPersonelSil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_personelSilFragment);
+            }
+        });
+
         // Login olunca sharedPreferences'e kaydedilen tokeni cekelim
         sp = requireActivity().getSharedPreferences("token", Context.MODE_PRIVATE);
         String accesToken = sp.getString("accesToken",null); // "token" isimli sharedPreferences dosyasindan "accesToken"a eristik.

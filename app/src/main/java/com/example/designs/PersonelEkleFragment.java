@@ -40,7 +40,6 @@ public class PersonelEkleFragment extends Fragment {
         tasarim.setPersonelEkleNesnesi(this); // xml deki nesneyi kurduk.
 
         Window window = getActivity().getWindow();
-        ;
         window.setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.c3));
         window.setNavigationBarColor(ContextCompat.getColor(requireContext(), R.color.c6));
 

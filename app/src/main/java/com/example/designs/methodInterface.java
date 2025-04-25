@@ -8,6 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface methodInterface {
 
@@ -26,4 +27,10 @@ public interface methodInterface {
     @POST("employeeInsert")
     Call<GenericResponse> personelEkle(@Body PersonelEkleRequest request); // personelEkle
 
+
+    @POST("employeeSearchWithName")
+    Call<PersonelAramaResponse> personelSearchWithName(@Body personelSilRequest request);
+
+    @POST("employeeSearchWithId")
+    Call<PersonelAramaResponse> personelSearchWithId(@Body personelSilRequest2 request);
 }
