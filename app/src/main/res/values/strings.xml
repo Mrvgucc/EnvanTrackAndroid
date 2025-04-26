@@ -51,6 +51,7 @@
     <string name="personelAdSoyad">Personel adını ve soyadını giriniz</string>
     <string name="IDBilinmiyorsa">ID bilmiyorsanız ad ve soyad giriniz</string>
     <string name="personelBul">Personel Bul</string>
+    <string name="demirbaslar">Demirbaşlar</string>
 
 
 </resources>

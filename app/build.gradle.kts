@@ -57,6 +57,8 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-livedata:2.8.7")
 
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
     
 
 

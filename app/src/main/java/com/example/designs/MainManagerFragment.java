@@ -43,14 +43,14 @@ public class MainManagerFragment extends Fragment {
         window.setStatusBarColor(ContextCompat.getColor(requireContext(),R.color.c3));
         window.setNavigationBarColor(ContextCompat.getColor(requireContext(),R.color.c6));
 
-        tasarim.buttonPersonelEkle.setOnClickListener(new View.OnClickListener() {
+        tasarim.imageView13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_personelEkleFragment);
+                Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_demirbasIslemleriFragment);
             }
         });
 
-        tasarim.buttonPersonelSil.setOnClickListener(new View.OnClickListener() {
+        tasarim.imageView14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_personelSilFragment);

@@ -33,4 +33,8 @@ public interface methodInterface {
 
     @POST("employeeSearchWithId")
     Call<PersonelAramaResponse> personelSearchWithId(@Body personelSilRequest2 request);
+
+    @GET("assetList")
+    Call<DemirbasListlemeResponse> demirbasListeleme();
+
 }

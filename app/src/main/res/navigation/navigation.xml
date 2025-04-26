@@ -28,11 +28,11 @@
         android:label="MainManagerFragment"
         tools:layout="@layout/fragment_main_manager">
         <action
-            android:id="@+id/action_mainManagerFragment_to_personelEkleFragment"
-            app:destination="@id/personelEkleFragment" />
-        <action
             android:id="@+id/action_mainManagerFragment_to_personelSilFragment"
             app:destination="@id/personelSilFragment" />
+        <action
+            android:id="@+id/action_mainManagerFragment_to_demirbasIslemleriFragment"
+            app:destination="@id/demirbasIslemleriFragment" />
     </fragment>
     <fragment
         android:id="@+id/personelEkleFragment"
@@ -44,4 +44,9 @@
         android:name="com.example.designs.PersonelSilFragment"
         android:label="PersonelSilFragment"
         tools:layout="@layout/fragment_personel_sil"/>
+    <fragment
+        android:id="@+id/demirbasIslemleriFragment"
+        android:name="com.example.designs.DemirbasIslemleriFragment"
+        android:label="DemirbasIslemleriFragment"
+        tools:layout="@layout/fragment_demirbas_islemleri"/>
 </navigation>

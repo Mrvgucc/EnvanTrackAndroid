@@ -1,15 +1,13 @@
 package com.example.designs;
 
-public class Employee {
+public class Asset {
     private int id;
     private String name;
-    private String surname;
-    private String email;
-    private String phone;
-    private String status;
+    private Category category_id;
+    private Employee registered_personal;
+    private String usage_status;
     private String created_at;
     private String updated_at;
-
 
     public int getId() {
         return id;
@@ -27,36 +25,28 @@ public class Employee {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public Category getCategory_id() {
+        return category_id;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setCategory_id(Category category_id) {
+        this.category_id = category_id;
     }
 
-    public String getEmail() {
-        return email;
+    public Employee getRegistered_personal() {
+        return registered_personal;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRegistered_personal(Employee registered_personal) {
+        this.registered_personal = registered_personal;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getUsage_status() {
+        return  usage_status;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUsage_status(String  usage_status) {
+        this. usage_status =  usage_status;
     }
 
     public String getCreated_at() {
@@ -75,3 +65,4 @@ public class Employee {
         this.updated_at = updated_at;
     }
 }
+

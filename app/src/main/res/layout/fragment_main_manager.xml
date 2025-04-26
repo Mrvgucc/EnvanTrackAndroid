@@ -8,6 +8,7 @@
         <variable
             name="mainManagerNesnesi"
             type="com.example.designs.MainManagerFragment" />
+
         <variable
             name="employeeInfo"
             type="com.example.designs.EmployeeInfoViewModel" />
@@ -24,7 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="15dp">
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -33,8 +37,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="@drawable/bg4"
-                android:src="@drawable/person"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:src="@drawable/person" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -70,7 +74,7 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:src="@drawable/notifications" />
+                android:src="@drawable/notification" />
 
         </LinearLayout>
 
@@ -110,191 +114,63 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/bg3"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_width="180dp"
+                            android:layout_height="180dp"
+                            android:background="@drawable/bg3"
                             android:orientation="vertical"
-                            android:padding="20dp">
-
-                            <TextView
-                                android:id="@+id/textView16"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/demisrbasIslemleri"
-                                android:textSize="17sp" />
+                            android:layout_margin="5dp"
+                            android:gravity="center">
 
                             <ImageView
-                                android:id="@+id/imageView12"
-                                android:layout_width="75dp"
-                                android:layout_height="75dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="5dp"
-                                android:src="@drawable/assetoperations" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imageView13"
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:paddingVertical="15dp"
-                            android:src="@drawable/kesiklicizgi" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="15dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/demirbasEkle"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button2"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/demirbasSil"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button3"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/demirbasGuncelle"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button5"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/demirbasListele"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/bg3"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:padding="20dp">
+                                android:id="@+id/imageView13"
+                                android:layout_width="100dp"
+                                android:layout_height="90dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/assetoperations" />
 
                             <TextView
                                 android:id="@+id/textView17"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/personelIslemleri"
-                                android:textSize="17sp" />
-
-                            <ImageView
-                                android:id="@+id/imageView15"
-                                android:layout_width="75dp"
-                                android:layout_height="75dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="5dp"
-                                android:src="@drawable/group" />
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="@string/demisrbasIslemleri"
+                                android:gravity="top|center"
+                                android:textSize="18sp"
+                                android:textStyle="bold"/>
                         </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imageView14"
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:paddingVertical="15dp"
-                            android:src="@drawable/kesiklicizgi" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_width="180dp"
+                            android:layout_height="180dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg3"
+                            android:layout_margin="5dp">
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/buttonPersonelEkle"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="15dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/personelEkle"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
+                            <ImageView
+                                android:id="@+id/imageView14"
+                                android:layout_width="100dp"
+                                android:layout_height="90dp"
+                                app:srcCompat="@drawable/group"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"/>
 
-                            <androidx.appcompat.widget.AppCompatButton
-
-                                android:id="@+id/buttonPersonelSil"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/personelSil"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/buttonPersonelGuncelle"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/personelGuncelle"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/buttonPersonelListele"
-                                android:layout_width="135dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg5"
-                                android:text="@string/personelListele"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
+                            <TextView
+                                android:id="@+id/textView31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/personelIslemleri"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:gravity="top|center"/>
                         </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
