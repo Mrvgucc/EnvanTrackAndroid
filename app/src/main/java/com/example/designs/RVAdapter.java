@@ -1,6 +1,7 @@
 package com.example.designs;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,11 +108,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
 
         if (asset.getIsEditMode()) {
 
+            holder.editText6.setText(asset.getName());
+            holder.editText5.setText(asset.getCategory_id().toString());
+
             holder.check.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String updatedAssetName = holder.editText6.getText().toString().trim();
                     String updatedCategoryName = holder.editText5.getText().toString().trim();
+
+                    if (updatedAssetName.isEmpty() || updatedCategoryName.isEmpty()) {
+                        Toast.makeText(mContext, "Lütfen tüm alanları doldurun!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     int categoryId = 0;
                     switch (updatedCategoryName) {
                         case "Teknolojik Ürün":
@@ -123,6 +133,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
                         case "Mutfak Araç Gereçleri":
                             categoryId = 3;
                             break;
+                        default:
+                            Toast.makeText(mContext, "Geçerli bir kategori adı girin!", Toast.LENGTH_SHORT).show();
+                            return;
                     }
 
                     DemirbaslGuncelleRequest request = new DemirbaslGuncelleRequest();
@@ -134,10 +147,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
                         @Override
                         public void onSuccess(String message) {
                             Toast.makeText(mContext, "Demirbaş başarıyla güncellendi !", Toast.LENGTH_LONG).show();
+                            asset.setEditMode(false);
+                            asset.setName(updatedAssetName);
+                            asset.setCategory_id(asset.getCategory_id());
+                            notifyItemChanged(holder.getAdapterPosition());
+
+
+                            if (listener != null) {
+                                listener.onEditChanged(false);
+                            }
                         }
 
                         @Override
                         public void onError(String error) {
+                            Log.e("API_ERROR", error); // logcat kontrolü için
                             Toast.makeText(mContext, "Demirbaş güncelleme başarısız !", Toast.LENGTH_LONG).show();
                         }
                     });
