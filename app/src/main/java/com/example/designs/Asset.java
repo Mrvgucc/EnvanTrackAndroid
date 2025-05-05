@@ -8,6 +8,8 @@ public class Asset {
     private String usage_status;
     private String created_at;
     private String updated_at;
+    private boolean isEditMode = false;
+
 
     public int getId() {
         return id;
@@ -63,6 +65,14 @@ public class Asset {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public boolean getIsEditMode(){
+        return isEditMode;
+    }
+
+    public void setEditMode(boolean editMode){
+        isEditMode = editMode;
     }
 }
 

@@ -4,7 +4,7 @@
     <shape>
         <gradient android:startColor="@color/white"
             android:endColor="@color/c2"/>
-        <corners android:radius="25dp"/>
+        <corners android:radius="24dp"/>
         <stroke android:width="2dp"
             android:color="@color/c7"/>
     </shape>

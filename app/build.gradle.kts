@@ -59,7 +59,12 @@ dependencies {
 
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
-    
+    implementation (libs.recyclerview.swipedecorator)
+
+    implementation(libs.androidx.recyclerview)
+
+
+
 
 
 }

@@ -5,9 +5,12 @@ import java.util.List;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface methodInterface {
@@ -36,5 +39,11 @@ public interface methodInterface {
 
     @GET("assetList")
     Call<DemirbasListlemeResponse> demirbasListeleme();
+
+    @DELETE("assetDelete/{id}")
+    Call<DemirbasSilmeResponse> demirbasSilme(@Path("id") int id);
+
+    @PUT("assetUpdate/{id}")
+    Call<DemirbasGuncellemeResponse> demirbasGuncelleme(@Path("id") int id ,@Body DemirbaslGuncelleRequest request);
 
 }

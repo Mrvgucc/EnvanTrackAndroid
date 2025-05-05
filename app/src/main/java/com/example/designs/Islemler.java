@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
+import java.security.PrivateKey;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -90,17 +91,17 @@ public class Islemler {
 
     public interface EmployeeInfoCallback {
         void onSuccess(EmployeeInfo employeeInfo);
+
         void onError(String errorMessage);
     }
 
-    public void personelEkle(PersonelEkleRequest request, final personelEkleCallBack callBack){
+    public void personelEkle(PersonelEkleRequest request, final personelEkleCallBack callBack) {
         methodInterface.personelEkle(request).enqueue(new Callback<GenericResponse>() {
             @Override
             public void onResponse(Call<GenericResponse> call, Response<GenericResponse> response) {
-                if(response.isSuccessful() && response.body() != null){
+                if (response.isSuccessful() && response.body() != null) {
                     callBack.onSuccess(response.body().getMessage());
-                }
-                else {
+                } else {
                     callBack.onError("Yanıt Alınamadı: " + response.code());
                 }
             }
@@ -112,10 +113,68 @@ public class Islemler {
         });
     }
 
-    public interface  personelEkleCallBack{
+    public interface personelEkleCallBack {
         void onSuccess(String message); // GenericResponse icerisinde sadece message oldugu icin sadece message gonderildi.
+
         void onError(String errorMessage);
     }
+
+    public void demirbasSilme(int id, SilmeCallback callback) {
+        methodInterface api = APIUtils.getMethodInterface();
+        Call<DemirbasSilmeResponse> call = api.demirbasSilme(id);
+        String message = "";
+
+        call.enqueue(new Callback<DemirbasSilmeResponse>() {
+            @Override
+            public void onResponse(Call<DemirbasSilmeResponse> call, Response<DemirbasSilmeResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Log.e("Silme İslemi", response.body().getMessage());
+                    callback.onSuccess(response.body().getMessage());
+                } else {
+                    callback.onError("Yanit alinamadi");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DemirbasSilmeResponse> call, Throwable t) {
+                callback.onError(t.getMessage());
+            }
+        });
+
+    }
+
+    public interface SilmeCallback {
+        void onSuccess(String message);
+
+        void onError(String error);
+    }
+
+    public void demirbasGuncelleme(int id,DemirbaslGuncelleRequest request, final demirbasGuncellemeCallback callback) {
+        methodInterface.demirbasGuncelleme(id,request).enqueue(new Callback<DemirbasGuncellemeResponse>() {
+            @Override
+            public void onResponse(Call<DemirbasGuncellemeResponse> call, Response<DemirbasGuncellemeResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body().getMessage());
+                }
+                else {
+                    callback.onError("Yanıt Alınamadı: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DemirbasGuncellemeResponse> call, Throwable t) {
+                callback.onError("İstek başarısız: " + t.getMessage());
+            }
+        });
+    }
+
+    public interface demirbasGuncellemeCallback {
+        void onSuccess(String message);
+
+        void onError(String error);
+    }
+
+
 }
 
 

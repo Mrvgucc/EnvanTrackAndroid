@@ -38,4 +38,9 @@ public class Category {
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
     }
+
+    @Override
+    public String toString() {
+        return name; // Spinner'da sadece kategori ismini göster
+    }
 }

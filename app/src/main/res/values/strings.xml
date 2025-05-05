@@ -52,6 +52,8 @@
     <string name="IDBilinmiyorsa">ID bilmiyorsanız ad ve soyad giriniz</string>
     <string name="personelBul">Personel Bul</string>
     <string name="demirbaslar">Demirbaşlar</string>
+    <string name="sayfadaGoruntulenenVeriSayisi"> </string>
+    <string name="demirbasIslemleriDemirbasEkle">Demirbaş İşlemleri / Demirbaş Ekle</string>
 
 
 </resources>
