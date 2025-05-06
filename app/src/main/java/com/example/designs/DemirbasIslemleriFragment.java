@@ -125,10 +125,9 @@ public class DemirbasIslemleriFragment extends Fragment {
 
                     asset.setEditMode(true);
                     adapter.notifyItemChanged(position); // UI gunceller
-                    if (asset.getIsEditMode()){
+                    if (asset.getIsEditMode()) {
                         tasarim.view2.setVisibility(View.VISIBLE);
-                    }
-                    else {
+                    } else {
                         tasarim.view2.setVisibility(View.INVISIBLE);
                     }
                 }
@@ -236,7 +235,8 @@ public class DemirbasIslemleriFragment extends Fragment {
         tasarim.imageView26.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                            }
+                Navigation.findNavController(v).navigate(R.id.action_demirbasIslemleriFragment_to_demirbasEkleFragment);
+            }
         });
 
     }

@@ -54,6 +54,11 @@
     <string name="demirbaslar">Demirbaşlar</string>
     <string name="sayfadaGoruntulenenVeriSayisi"> </string>
     <string name="demirbasIslemleriDemirbasEkle">Demirbaş İşlemleri / Demirbaş Ekle</string>
+    <string name="eklemekIstediginizDemirbas">Eklemek istediğiniz demirbaş bilgilerini giriniz.</string>
+    <string name="demirbasAdiGiriniz">Demirbaş Adını Giriniz *</string>
+    <string name="demirbasAdi">Demirbaş Adı</string>
+    <string name="kategoriSeciniz">Kategori Seçiniz</string>
+    <string name="zimmetlenecekKullaniciSeciniz">Zimmetlenecek Kullanıcı Seçiniz</string>
 
 
 </resources>

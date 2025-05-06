@@ -6,6 +6,8 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 import java.security.PrivateKey;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -172,6 +174,55 @@ public class Islemler {
         void onSuccess(String message);
 
         void onError(String error);
+    }
+
+    public void kategoriListeleme(demirbasListelemeCallback callback){
+        methodInterface.kategoriListeleme().enqueue(new Callback<CategoryListResponse>() {
+            @Override
+            public void onResponse(Call<CategoryListResponse> call, Response<CategoryListResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    callback.onCategoriesLoaded(response.body().getCategories());
+                }
+                else {
+                    callback.onError("Yanıt Basarisiz" + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoryListResponse> call, Throwable t) {
+                callback.onError(t.getMessage());
+            }
+        });
+    }
+
+    public interface demirbasListelemeCallback{
+        void onCategoriesLoaded(List<Category> categories);
+        void onError(String errorMessage);
+    }
+
+
+    public void calisanListeleme(calisanListelemeCallBack callback){
+        methodInterface.calisanListeleme().enqueue(new Callback<EmployeeListResponse>() {
+            @Override
+            public void onResponse(Call<EmployeeListResponse> call, Response<EmployeeListResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    callback.onEmployeesLoaded(response.body().getEmployees());
+                }
+                else{
+                    callback.onError("Yanit alinamadi" + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<EmployeeListResponse> call, Throwable t) {
+                callback.onError(t.getMessage());
+            }
+        });
+    }
+
+    public interface calisanListelemeCallBack{
+        void onEmployeesLoaded(List<Employee> employees);
+        void onError(String errorMessage);
     }
 
 

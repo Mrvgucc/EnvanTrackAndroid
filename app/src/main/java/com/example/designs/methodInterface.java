@@ -46,4 +46,10 @@ public interface methodInterface {
     @PUT("assetUpdate/{id}")
     Call<DemirbasGuncellemeResponse> demirbasGuncelleme(@Path("id") int id ,@Body DemirbaslGuncelleRequest request);
 
+    @GET("categoryList")
+    Call<CategoryListResponse> kategoriListeleme();
+
+    @GET("employeeList")
+    Call<EmployeeListResponse> calisanListeleme();
+
 }

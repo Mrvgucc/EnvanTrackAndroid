@@ -48,5 +48,14 @@
         android:id="@+id/demirbasIslemleriFragment"
         android:name="com.example.designs.DemirbasIslemleriFragment"
         android:label="DemirbasIslemleriFragment"
-        tools:layout="@layout/fragment_demirbas_islemleri"/>
+        tools:layout="@layout/fragment_demirbas_islemleri">
+        <action
+            android:id="@+id/action_demirbasIslemleriFragment_to_demirbasEkleFragment"
+            app:destination="@id/demirbasEkleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/demirbasEkleFragment"
+        android:name="com.example.designs.DemirbasEkleFragment"
+        android:label="DemirbasEkleFragment"
+        tools:layout="@layout/fragment_demirbas_ekle"/>
 </navigation>
