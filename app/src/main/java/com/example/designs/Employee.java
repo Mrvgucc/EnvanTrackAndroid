@@ -1,5 +1,7 @@
 package com.example.designs;
 
+import androidx.annotation.NonNull;
+
 public class Employee {
     private int id;
     private String name;
@@ -73,5 +75,11 @@ public class Employee {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return name;
     }
 }

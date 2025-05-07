@@ -57,8 +57,9 @@
     <string name="eklemekIstediginizDemirbas">Eklemek istediğiniz demirbaş bilgilerini giriniz.</string>
     <string name="demirbasAdiGiriniz">Demirbaş Adını Giriniz *</string>
     <string name="demirbasAdi">Demirbaş Adı</string>
-    <string name="kategoriSeciniz">Kategori Seçiniz</string>
-    <string name="zimmetlenecekKullaniciSeciniz">Zimmetlenecek Kullanıcı Seçiniz</string>
+    <string name="kategoriSeciniz">Kategori</string>
+    <string name="zimmetlenecekKullaniciSeciniz">Zimmetlenecek Kullanıcı (Opsiyonel)</string>
+    <string name="ekle">Ekle</string>
 
 
 </resources>

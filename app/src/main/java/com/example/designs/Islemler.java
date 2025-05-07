@@ -225,6 +225,30 @@ public class Islemler {
         void onError(String errorMessage);
     }
 
+    public void demirbasEkle(DemirbasEkleRequest request, demirbasEkleCallback callback){
+        methodInterface.demirbasEkle(request).enqueue(new Callback<DemirbasEkleResponse>() {
+            @Override
+            public void onResponse(Call<DemirbasEkleResponse> call, Response<DemirbasEkleResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    callback.onSuccess(response.body().getMessage());
+                }
+                else {
+                    callback.onError("Yanit alinamadi" + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DemirbasEkleResponse> call, Throwable t) {
+                callback.onError("Istek Basarisiz" + t.getMessage());
+            }
+        });
+    }
+
+    public interface demirbasEkleCallback{
+        void onSuccess(String message);
+        void onError (String errorMessage);
+    }
+
 
 }
 

@@ -9,6 +9,7 @@ public class CategoryListResponse {
     @SerializedName("categories")
     private List<Category> categories;
 
+
     public List<Category> getCategories() {
         return categories;
     }

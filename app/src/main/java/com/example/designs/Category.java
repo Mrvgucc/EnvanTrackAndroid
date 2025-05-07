@@ -1,5 +1,7 @@
 package com.example.designs;
 
+import androidx.annotation.NonNull;
+
 public class Category {
 
     private int id;
@@ -39,6 +41,7 @@ public class Category {
         this.updated_at = updated_at;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return name; // Spinner'da sadece kategori ismini göster

@@ -52,4 +52,9 @@ public interface methodInterface {
     @GET("employeeList")
     Call<EmployeeListResponse> calisanListeleme();
 
+    @POST("assetInsert")
+    Call<DemirbasEkleResponse> demirbasEkle(@Body DemirbasEkleRequest request); // denirbasEkle
+
+
+
 }
