@@ -60,6 +60,8 @@
     <string name="kategoriSeciniz">Kategori</string>
     <string name="zimmetlenecekKullaniciSeciniz">Zimmetlenecek Kullanıcı (Opsiyonel)</string>
     <string name="ekle">Ekle</string>
+    <string name="personeller">Personeller</string>
+    <string name="sayfadaListelenenPersonelSayisi">.. personel listelendi</string>
 
 
 </resources>

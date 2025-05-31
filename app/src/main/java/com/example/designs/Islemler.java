@@ -249,6 +249,34 @@ public class Islemler {
         void onError (String errorMessage);
     }
 
+    public void personelSil(int id, personelSilmeCallback callback){
+            methodInterface api = APIUtils.getMethodInterface();
+            Call<PersonelSilmeRespone> call = api.personelSilme(id);
+
+            call.enqueue(new Callback<PersonelSilmeRespone>() {
+                @Override
+                public void onResponse(Call<PersonelSilmeRespone> call, Response<PersonelSilmeRespone> response) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        Log.e("Silme İslemi", response.body().getMessage());
+                        callback.onSuccess(response.body().getMessage());
+                    } else {
+                        callback.onError("Yanit alinamadi");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PersonelSilmeRespone> call, Throwable t) {
+                    callback.onError(t.getMessage());
+                }
+            });
+    }
+
+    public interface personelSilmeCallback{
+        void onSuccess(String message);
+        void onError(String error);
+    }
+
+
 
 }
 

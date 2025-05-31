@@ -67,7 +67,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/bg5"
-            android:padding="3dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
             android:text="@string/sayfadaGoruntulenenVeriSayisi"
             android:textSize="17sp"
             app:layout_constraintEnd_toStartOf="@+id/view2"
@@ -77,7 +78,7 @@
         <ImageView
             android:id="@+id/imageView27"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,8 +89,11 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView27">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,7 +114,8 @@
                             android:id="@+id/rv"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="5dp" />
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="15dp"/>
                     </LinearLayout>
                 </ScrollView>
 

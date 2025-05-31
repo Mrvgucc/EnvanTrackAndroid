@@ -28,22 +28,17 @@
         android:label="MainManagerFragment"
         tools:layout="@layout/fragment_main_manager">
         <action
-            android:id="@+id/action_mainManagerFragment_to_personelSilFragment"
-            app:destination="@id/personelSilFragment" />
-        <action
             android:id="@+id/action_mainManagerFragment_to_demirbasIslemleriFragment"
             app:destination="@id/demirbasIslemleriFragment" />
+        <action
+            android:id="@+id/action_mainManagerFragment_to_personelIslemlerFragment"
+            app:destination="@id/personelIslemlerFragment" />
     </fragment>
     <fragment
         android:id="@+id/personelEkleFragment"
         android:name="com.example.designs.PersonelEkleFragment"
         android:label="PersonelEkleFragment"
         tools:layout="@layout/fragment_personel_ekle"/>
-    <fragment
-        android:id="@+id/personelSilFragment"
-        android:name="com.example.designs.PersonelSilFragment"
-        android:label="PersonelSilFragment"
-        tools:layout="@layout/fragment_personel_sil"/>
     <fragment
         android:id="@+id/demirbasIslemleriFragment"
         android:name="com.example.designs.DemirbasIslemleriFragment"
@@ -58,4 +53,9 @@
         android:name="com.example.designs.DemirbasEkleFragment"
         android:label="DemirbasEkleFragment"
         tools:layout="@layout/fragment_demirbas_ekle"/>
+    <fragment
+        android:id="@+id/personelIslemlerFragment"
+        android:name="com.example.designs.PersonelIslemlerFragment"
+        android:label="PersonelIslemlerFragment"
+        tools:layout="@layout/fragment_personel_islemler"/>
 </navigation>

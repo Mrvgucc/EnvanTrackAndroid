@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="updatePersonDialog"
+            type="com.example.designs.RVAdapterPersonal" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg5"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:id="@+id/editTextText7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg4"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp" />
+
+        <EditText
+            android:id="@+id/editTextText8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg4"
+            android:ems="10"
+            android:hint="Surname"
+            android:inputType="text"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp" />
+
+        <EditText
+            android:id="@+id/editTextText9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg4"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="text"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp" />
+
+        <EditText
+            android:id="@+id/editTextText10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg4"
+            android:ems="10"
+            android:hint="Phone"
+            android:inputType="text"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPersonel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personel" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2Yonetici"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yönetici" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+</layout>

@@ -211,7 +211,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
     }
 
     // cardTasarimini baglama
-
     public class cardViewTasarimBaglayici extends RecyclerView.ViewHolder {
 
         // cardView uzerinde olan nesneler tanimlanmalidir

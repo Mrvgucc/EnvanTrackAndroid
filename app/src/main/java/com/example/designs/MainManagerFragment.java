@@ -53,7 +53,7 @@ public class MainManagerFragment extends Fragment {
         tasarim.imageView14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_personelSilFragment);
+                Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_personelIslemlerFragment);
             }
         });
 

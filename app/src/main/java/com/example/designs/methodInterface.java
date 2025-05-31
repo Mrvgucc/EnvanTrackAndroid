@@ -55,6 +55,11 @@ public interface methodInterface {
     @POST("assetInsert")
     Call<DemirbasEkleResponse> demirbasEkle(@Body DemirbasEkleRequest request); // denirbasEkle
 
+    @DELETE("employeeDelete/{id}")
+    Call<PersonelSilmeRespone> personelSilme(@Path("id") int id);
+
+
+
 
 
 }
