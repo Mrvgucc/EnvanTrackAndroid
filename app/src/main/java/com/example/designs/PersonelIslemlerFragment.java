@@ -42,6 +42,12 @@ public class PersonelIslemlerFragment extends Fragment {
 
         loadData();
 
+        tasarim.imageView35.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_personelIslemlerFragment_to_personelEkleFragment);
+            }
+        });
 
 
         return tasarim.getRoot();

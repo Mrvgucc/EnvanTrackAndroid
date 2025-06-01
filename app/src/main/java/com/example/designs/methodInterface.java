@@ -58,6 +58,9 @@ public interface methodInterface {
     @DELETE("employeeDelete/{id}")
     Call<PersonelSilmeRespone> personelSilme(@Path("id") int id);
 
+    @PUT("employeeUpdate/{id}")
+    Call<PersonelGuncelleResponse> personelGuncelle(@Path("id") int id, @Body PersonelGuncelleRequest request);
+
 
 
 

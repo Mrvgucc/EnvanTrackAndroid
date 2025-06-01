@@ -276,6 +276,29 @@ public class Islemler {
         void onError(String error);
     }
 
+    public void personelGuncelle(int id,PersonelGuncelleRequest request, final personelGuncelleCallback callback){
+        methodInterface.personelGuncelle(id,request).enqueue(new Callback<PersonelGuncelleResponse>() {
+            @Override
+            public void onResponse(Call<PersonelGuncelleResponse> call, Response<PersonelGuncelleResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body().getMessage());
+                }
+                else {
+                    callback.onError("Yanıt Alınamadı: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PersonelGuncelleResponse> call, Throwable t) {
+                callback.onError("İstek başarısız: " + t.getMessage());
+            }
+        });
+    }
+
+    public interface personelGuncelleCallback{
+        void onSuccess(String message);
+        void onError(String error);
+    }
 
 
 }

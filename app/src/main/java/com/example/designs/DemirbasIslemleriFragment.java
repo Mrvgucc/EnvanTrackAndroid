@@ -88,6 +88,7 @@ public class DemirbasIslemleriFragment extends Fragment {
         });
 
 
+
         loadData();
 
 

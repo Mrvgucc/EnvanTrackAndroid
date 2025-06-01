@@ -95,11 +95,80 @@ public class RVAdapterPersonal extends RecyclerView.Adapter<RVAdapterPersonal.ca
         holder.imageView40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               personelIslemlerBinding.view6.setVisibility(View.VISIBLE);
+                personelIslemlerBinding.view6.setVisibility(View.VISIBLE);
+
+                holder.binding.editTextText11.setVisibility(View.VISIBLE);
+                holder.binding.editTextText12.setVisibility(View.VISIBLE);
+                holder.binding.editTextText13.setVisibility(View.VISIBLE);
+                holder.binding.editTextText14.setVisibility(View.VISIBLE);
+                holder.binding.editTextText15.setVisibility(View.VISIBLE);
+                holder.binding.imageView38.setVisibility(View.INVISIBLE);
+                holder.binding.imageView41.setVisibility(View.VISIBLE);
+                holder.binding.imageView40.setVisibility(View.INVISIBLE);
+                holder.binding.imageView42.setVisibility(View.VISIBLE);
+
+                String gelenAd = holder.binding.editTextText11.getText().toString();
+                String gelenSoyad = holder.binding.editTextText12.getText().toString();
+                String gelenEmail = holder.binding.editTextText13.getText().toString();
+                String gelenTelefon = holder.binding.editTextText14.getText().toString();
+                String gelenStatu = holder.binding.editTextText15.getText().toString();
+
+                PersonelGuncelleRequest request = new PersonelGuncelleRequest();
+                request.setName(gelenAd);
+                request.setSurname(gelenSoyad);
+                request.setEmail(gelenEmail);
+                request.setPhone(gelenTelefon);
+                request.setStatus(gelenStatu);
+
+
+                holder.binding.imageView41.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Islemler personelGuncelle = new Islemler();
+                        personelGuncelle.personelGuncelle(personelId, request, new Islemler.personelGuncelleCallback() {
+                            @Override
+                            public void onSuccess(String message) {
+
+                                Toast.makeText(mContext, "Güncelleme başarıyla gerçekleşti.", Toast.LENGTH_LONG).show();
+                                holder.binding.editTextText11.setVisibility(View.GONE);
+                                holder.binding.editTextText12.setVisibility(View.GONE);
+                                holder.binding.editTextText13.setVisibility(View.GONE);
+                                holder.binding.editTextText14.setVisibility(View.GONE);
+                                holder.binding.editTextText15.setVisibility(View.GONE);
+                                personelIslemlerBinding.view6.setVisibility(View.GONE);
+
+                                notifyItemChanged(holder.getAdapterPosition()); // recyclerview ogesini guncelle
+
+
+                            }
+
+                            @Override
+                            public void onError(String error) {
+                                Toast.makeText(mContext, "Güncelleme başarısız!", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                });
+
+                holder.binding.imageView42.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        personelIslemlerBinding.view6.setVisibility(View.GONE);
+                        holder.binding.imageView38.setVisibility(View.VISIBLE);
+                        holder.binding.imageView41.setVisibility(View.GONE);
+                        holder.binding.imageView40.setVisibility(View.VISIBLE);
+                        holder.binding.imageView42.setVisibility(View.GONE);
+                        holder.binding.editTextText11.setVisibility(View.GONE);
+                        holder.binding.editTextText12.setVisibility(View.GONE);
+                        holder.binding.editTextText13.setVisibility(View.GONE);
+                        holder.binding.editTextText14.setVisibility(View.GONE);
+                        holder.binding.editTextText15.setVisibility(View.GONE);
+                    }
+                });
 
 
             }
-    });
+        });
     }
 
     @Override

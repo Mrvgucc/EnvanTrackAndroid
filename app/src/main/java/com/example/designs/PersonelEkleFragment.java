@@ -30,6 +30,7 @@ public class PersonelEkleFragment extends Fragment {
     private SharedPreferences.Editor editor;
 
     private boolean gozAcik = false;
+    private boolean gozAcik2 = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,7 +100,7 @@ public class PersonelEkleFragment extends Fragment {
                 } else if (sifre.isEmpty()) {
                     Toast.makeText(getContext(), "Şifrenizi giriniz.", Toast.LENGTH_SHORT).show();
                     return;
-                } else if (sifreTekrari.isEmpty()){
+                } else if (sifreTekrari.isEmpty()) {
                     Toast.makeText(getContext(), "Şifrenizi tekrar giriniz.", Toast.LENGTH_SHORT).show();
                 }
 
@@ -120,7 +121,7 @@ public class PersonelEkleFragment extends Fragment {
 
                     @Override
                     public void onError(String errorMessage) {
-                        Log.e("Ekleme Basarisiz" , errorMessage);
+                        Log.e("Ekleme Basarisiz", errorMessage);
                         Toast.makeText(getContext(), "Personel ekleme işlemi başarısız !", Toast.LENGTH_LONG).show();
                     }
                 });
@@ -130,30 +131,33 @@ public class PersonelEkleFragment extends Fragment {
         });
 
 
-
-
         return tasarim.getRoot();
     }
 
-    public void gozDegistirme(){
+    public void gozDegistirme() {
         ImageView imageViewGoz = tasarim.imageView17;
         ImageView imageViewGoz2 = tasarim.imageView23;
         EditText editTextSifre = tasarim.editTextGelenSifre;
         EditText editTextSifre2 = tasarim.editTextGelenSifreTekrar;
 
         // imageViewGoz'e tiklandiginda
-        if(gozAcik){ // goz acik ise
+        if (gozAcik) { // goz acik ise
             editTextSifre.setTransformationMethod(new android.text.method.PasswordTransformationMethod()); // sifre gorunmez olur
+            imageViewGoz.setImageResource(R.drawable.visibility);
+        } else {
+            editTextSifre.setTransformationMethod(null); // sifre gorunur olur
+            imageViewGoz.setImageResource(R.drawable.visibilityoff);
+
+        }
+        if (gozAcik2) { // goz acik ise
             editTextSifre2.setTransformationMethod(new android.text.method.PasswordTransformationMethod());
             imageViewGoz.setImageResource(R.drawable.visibility);
-            imageViewGoz2.setImageResource(R.drawable.visibility);
-        }
-        else {
-            editTextSifre.setTransformationMethod(null); // sifre gorunur olur
-            editTextSifre2.setTransformationMethod(null);
+        } else {
+            editTextSifre2.setTransformationMethod(null); //sifre gorunur olur
             imageViewGoz.setImageResource(R.drawable.visibilityoff);
-            imageViewGoz2.setImageResource(R.drawable.visibilityoff);
+
         }
+
 
         gozAcik = !gozAcik;
 
