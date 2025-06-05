@@ -21,7 +21,11 @@
         android:id="@+id/mainPersonalFragment"
         android:name="com.example.designs.MainPersonalFragment"
         android:label="fragment_main_personal"
-        tools:layout="@layout/fragment_main_personal" />
+        tools:layout="@layout/fragment_main_personal" >
+        <action
+            android:id="@+id/action_mainPersonalFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/mainManagerFragment"
         android:name="com.example.designs.MainManagerFragment"
@@ -33,6 +37,9 @@
         <action
             android:id="@+id/action_mainManagerFragment_to_personelIslemlerFragment"
             app:destination="@id/personelIslemlerFragment" />
+        <action
+            android:id="@+id/action_mainManagerFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
     </fragment>
     <fragment
         android:id="@+id/personelEkleFragment"

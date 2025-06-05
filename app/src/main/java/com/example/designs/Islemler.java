@@ -151,14 +151,13 @@ public class Islemler {
         void onError(String error);
     }
 
-    public void demirbasGuncelleme(int id,DemirbaslGuncelleRequest request, final demirbasGuncellemeCallback callback) {
-        methodInterface.demirbasGuncelleme(id,request).enqueue(new Callback<DemirbasGuncellemeResponse>() {
+    public void demirbasGuncelleme(int id, DemirbaslGuncelleRequest request, final demirbasGuncellemeCallback callback) {
+        methodInterface.demirbasGuncelleme(id, request).enqueue(new Callback<DemirbasGuncellemeResponse>() {
             @Override
             public void onResponse(Call<DemirbasGuncellemeResponse> call, Response<DemirbasGuncellemeResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     callback.onSuccess(response.body().getMessage());
-                }
-                else {
+                } else {
                     callback.onError("Yanıt Alınamadı: " + response.code());
                 }
             }
@@ -176,14 +175,13 @@ public class Islemler {
         void onError(String error);
     }
 
-    public void kategoriListeleme(demirbasListelemeCallback callback){
+    public void kategoriListeleme(demirbasListelemeCallback callback) {
         methodInterface.kategoriListeleme().enqueue(new Callback<CategoryListResponse>() {
             @Override
             public void onResponse(Call<CategoryListResponse> call, Response<CategoryListResponse> response) {
-                if(response.isSuccessful() && response.body() != null){
+                if (response.isSuccessful() && response.body() != null) {
                     callback.onCategoriesLoaded(response.body().getCategories());
-                }
-                else {
+                } else {
                     callback.onError("Yanıt Basarisiz" + response.code());
                 }
             }
@@ -195,20 +193,20 @@ public class Islemler {
         });
     }
 
-    public interface demirbasListelemeCallback{
+    public interface demirbasListelemeCallback {
         void onCategoriesLoaded(List<Category> categories);
+
         void onError(String errorMessage);
     }
 
 
-    public void calisanListeleme(calisanListelemeCallBack callback){
+    public void calisanListeleme(calisanListelemeCallBack callback) {
         methodInterface.calisanListeleme().enqueue(new Callback<EmployeeListResponse>() {
             @Override
             public void onResponse(Call<EmployeeListResponse> call, Response<EmployeeListResponse> response) {
-                if(response.isSuccessful() && response.body() != null){
+                if (response.isSuccessful() && response.body() != null) {
                     callback.onEmployeesLoaded(response.body().getEmployees());
-                }
-                else{
+                } else {
                     callback.onError("Yanit alinamadi" + response.code());
                 }
             }
@@ -220,19 +218,19 @@ public class Islemler {
         });
     }
 
-    public interface calisanListelemeCallBack{
+    public interface calisanListelemeCallBack {
         void onEmployeesLoaded(List<Employee> employees);
+
         void onError(String errorMessage);
     }
 
-    public void demirbasEkle(DemirbasEkleRequest request, demirbasEkleCallback callback){
+    public void demirbasEkle(DemirbasEkleRequest request, demirbasEkleCallback callback) {
         methodInterface.demirbasEkle(request).enqueue(new Callback<DemirbasEkleResponse>() {
             @Override
             public void onResponse(Call<DemirbasEkleResponse> call, Response<DemirbasEkleResponse> response) {
-                if(response.isSuccessful() && response.body() != null){
+                if (response.isSuccessful() && response.body() != null) {
                     callback.onSuccess(response.body().getMessage());
-                }
-                else {
+                } else {
                     callback.onError("Yanit alinamadi" + response.code());
                 }
             }
@@ -244,46 +242,47 @@ public class Islemler {
         });
     }
 
-    public interface demirbasEkleCallback{
+    public interface demirbasEkleCallback {
         void onSuccess(String message);
-        void onError (String errorMessage);
+
+        void onError(String errorMessage);
     }
 
-    public void personelSil(int id, personelSilmeCallback callback){
-            methodInterface api = APIUtils.getMethodInterface();
-            Call<PersonelSilmeRespone> call = api.personelSilme(id);
+    public void personelSil(int id, personelSilmeCallback callback) {
+        methodInterface api = APIUtils.getMethodInterface();
+        Call<PersonelSilmeRespone> call = api.personelSilme(id);
 
-            call.enqueue(new Callback<PersonelSilmeRespone>() {
-                @Override
-                public void onResponse(Call<PersonelSilmeRespone> call, Response<PersonelSilmeRespone> response) {
-                    if (response.isSuccessful() && response.body() != null) {
-                        Log.e("Silme İslemi", response.body().getMessage());
-                        callback.onSuccess(response.body().getMessage());
-                    } else {
-                        callback.onError("Yanit alinamadi");
-                    }
+        call.enqueue(new Callback<PersonelSilmeRespone>() {
+            @Override
+            public void onResponse(Call<PersonelSilmeRespone> call, Response<PersonelSilmeRespone> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Log.e("Silme İslemi", response.body().getMessage());
+                    callback.onSuccess(response.body().getMessage());
+                } else {
+                    callback.onError("Yanit alinamadi");
                 }
+            }
 
-                @Override
-                public void onFailure(Call<PersonelSilmeRespone> call, Throwable t) {
-                    callback.onError(t.getMessage());
-                }
-            });
+            @Override
+            public void onFailure(Call<PersonelSilmeRespone> call, Throwable t) {
+                callback.onError(t.getMessage());
+            }
+        });
     }
 
-    public interface personelSilmeCallback{
+    public interface personelSilmeCallback {
         void onSuccess(String message);
+
         void onError(String error);
     }
 
-    public void personelGuncelle(int id,PersonelGuncelleRequest request, final personelGuncelleCallback callback){
-        methodInterface.personelGuncelle(id,request).enqueue(new Callback<PersonelGuncelleResponse>() {
+    public void personelGuncelle(int id, PersonelGuncelleRequest request, final personelGuncelleCallback callback) {
+        methodInterface.personelGuncelle(id, request).enqueue(new Callback<PersonelGuncelleResponse>() {
             @Override
             public void onResponse(Call<PersonelGuncelleResponse> call, Response<PersonelGuncelleResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     callback.onSuccess(response.body().getMessage());
-                }
-                else {
+                } else {
                     callback.onError("Yanıt Alınamadı: " + response.code());
                 }
             }
@@ -295,8 +294,35 @@ public class Islemler {
         });
     }
 
-    public interface personelGuncelleCallback{
+    public interface personelGuncelleCallback {
         void onSuccess(String message);
+
+        void onError(String error);
+    }
+
+
+    public void cikisYap(String accessToken, final cikisCallBack callBack) {
+        methodInterface.cikisYap(accessToken).enqueue(new Callback<LogoutResponse>() {
+            @Override
+            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+                if (response.isSuccessful()) {
+                    String message = response.body().getMessage();
+                    callBack.onSuccess(message); // callback ile mesaj gosterme
+                } else {
+                    callBack.onError("Çıkış başarısız: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LogoutResponse> call, Throwable t) {
+                callBack.onError("Sunucu hatası: " + t.getLocalizedMessage());
+            }
+        });
+    }
+
+    public interface cikisCallBack {
+        void onSuccess(String message);
+
         void onError(String error);
     }
 

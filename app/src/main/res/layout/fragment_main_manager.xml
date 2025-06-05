@@ -66,15 +66,23 @@
                     android:text="@{employeeInfo.employeeInfoLiveData.email }"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
+
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageViewNotification"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:src="@drawable/notification" />
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:padding="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/not" />
+
+            <ImageView
+                android:id="@+id/imageView41"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/power" />
 
         </LinearLayout>
 

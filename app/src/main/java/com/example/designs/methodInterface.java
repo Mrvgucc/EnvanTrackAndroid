@@ -61,6 +61,8 @@ public interface methodInterface {
     @PUT("employeeUpdate/{id}")
     Call<PersonelGuncelleResponse> personelGuncelle(@Path("id") int id, @Body PersonelGuncelleRequest request);
 
+    @POST("logout")
+    Call<LogoutResponse> cikisYap(@Header("Authorization") String token);
 
 
 

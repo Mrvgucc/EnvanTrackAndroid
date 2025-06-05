@@ -62,6 +62,7 @@
     <string name="ekle">Ekle</string>
     <string name="personeller">Personeller</string>
     <string name="sayfadaListelenenPersonelSayisi">.. personel listelendi</string>
+    <string name="cikisYap">Çıkış Yap</string>
 
 
 </resources>
