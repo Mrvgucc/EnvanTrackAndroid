@@ -88,7 +88,6 @@ public class DemirbasIslemleriFragment extends Fragment {
         });
 
 
-
         loadData();
 
 
@@ -188,7 +187,8 @@ public class DemirbasIslemleriFragment extends Fragment {
 
     public void loadData() {
 
-        progressBar.setVisibility(View.VISIBLE); // ProgressBar gorunur olur
+        tasarim.progressBar.setVisibility(View.VISIBLE); // ProgressBar gorunur olur
+        tasarim.view5.setVisibility(View.VISIBLE);
 
         // API cagrisi
         final methodInterface methodInterface = APIUtils.getMethodInterface();
@@ -211,6 +211,7 @@ public class DemirbasIslemleriFragment extends Fragment {
 
                         swipeRefreshLayout.setRefreshing(false);
                         progressBar.setVisibility(View.GONE);
+                        tasarim.view5.setVisibility(View.INVISIBLE);
                     }
 
 

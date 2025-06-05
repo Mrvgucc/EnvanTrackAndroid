@@ -1,5 +1,6 @@
 package com.example.designs;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.RenderEffect;
@@ -12,7 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,7 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -65,6 +69,7 @@ public class LoginFragment extends Fragment {
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Log.e("Login Error", "Kullanıcı adı veya şifre boş olamaz.");
+                    Toast.makeText(getContext(), "Kullanıcı adı veya şifre boş olamaz!",Toast.LENGTH_LONG).show();
                     return;  // Hatalı giriş durumu
                 }
 
@@ -94,7 +99,7 @@ public class LoginFragment extends Fragment {
                         editor.putString("phone",login.getPhone());
                         editor.commit();
                         Log.e("Token Preferences a kaydedildi" , accessToken);
-                        tasarim.progressBar.setVisibility(View.GONE);
+                        tasarim.progressBar.setVisibility (View.GONE);
                         view.setVisibility(View.GONE);
                         if (login.getStatus().equals("personal")){
                             Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainPersonalFragment);
@@ -111,6 +116,24 @@ public class LoginFragment extends Fragment {
                         Log.e("Login Error onError", errorMessage);
                         tasarim.progressBar.setVisibility(View.GONE);
                         view.setVisibility(View.GONE);
+                        AlertDialog.Builder alert = new AlertDialog.Builder(requireContext());
+                        alert.setTitle("Uyarı ");
+                        alert.setMessage("Kullanıcı adı veya şifre hatalı!");
+                        alert.setIcon(R.drawable.errror);
+                        alert.setCancelable(true);
+                            alert.setNegativeButton("Tamam", (dialog, which) -> {
+                                dialog.dismiss();
+                            });
+
+                        AlertDialog alertDialog = alert.create();
+                        alertDialog.show();
+
+
+                        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                            if (alertDialog.isShowing()){
+                                alertDialog.dismiss();
+                            }
+                        }, 3000);
 
                     }
                 });
