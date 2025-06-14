@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,8 @@ public class MainManagerFragment extends Fragment {
         String accesToken = sp.getString("accesToken", null); // "token" isimli sharedPreferences dosyasindan "accesToken"a eristik.
         String tokenType = sp.getString("token_type", null);
         String token = tokenType + " " + accesToken;
+        int id = sp.getInt("id",0);
+        Log.e("id",String.valueOf(id));
         // cekilen bu tokenin kimligini dogrulayip yetkilendirme islemini yapalim
 //        Islemler islem2 = new Islemler();
 //        islem2.EmployeeInfo(token);
@@ -84,7 +87,7 @@ public class MainManagerFragment extends Fragment {
                             cikisIslemi.cikisYap(token, new Islemler.cikisCallBack() {
                                 @Override
                                 public void onSuccess(String message) {
-                                    Toast.makeText(getContext(),"Çıkış işlemi başarılı.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), "Çıkış işlemi başarılı.", Toast.LENGTH_SHORT).show();
                                     Navigation.findNavController(v).navigate(R.id.action_mainManagerFragment_to_loginFragment2);
 
 
@@ -92,7 +95,7 @@ public class MainManagerFragment extends Fragment {
 
                                 @Override
                                 public void onError(String error) {
-                                    Toast.makeText(getContext(),"Çıkış işlemi başarısız.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), "Çıkış işlemi başarısız.", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         })

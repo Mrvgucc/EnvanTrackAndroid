@@ -64,6 +64,10 @@ public interface methodInterface {
     @POST("logout")
     Call<LogoutResponse> cikisYap(@Header("Authorization") String token);
 
+    @GET("assetListWithId/{id}")
+    Call<AssetListWithIdResponse> assetListWithResponse(@Header("Authorization") String token,@Path("id") int id);
+
+
 
 
 

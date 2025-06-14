@@ -6,6 +6,9 @@ import java.util.List;
 
 public class DemirbasListlemeResponse {
 
+    @SerializedName("count")
+    private int count;
+
     @SerializedName("assets")
     private List<Asset> assets;
 
@@ -15,5 +18,13 @@ public class DemirbasListlemeResponse {
 
     public void setAssets(List<Asset> assets) {
         this.assets = assets;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

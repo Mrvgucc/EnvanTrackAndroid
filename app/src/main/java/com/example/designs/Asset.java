@@ -4,7 +4,7 @@ public class Asset {
     private int id;
     private String name;
     private Category category_id;
-    private Employee registered_personal;
+    private RegisteredPersonel registered_personal;
     private String usage_status;
     private String created_at;
     private String updated_at;
@@ -35,11 +35,11 @@ public class Asset {
         this.category_id = category_id;
     }
 
-    public Employee getRegistered_personal() {
+    public RegisteredPersonel getRegistered_personal() {
         return registered_personal;
     }
 
-    public void setRegistered_personal(Employee registered_personal) {
+    public void setRegistered_personal(RegisteredPersonel registered_personal) {
         this.registered_personal = registered_personal;
     }
 
@@ -73,6 +73,15 @@ public class Asset {
 
     public void setEditMode(boolean editMode){
         isEditMode = editMode;
+    }
+
+    @Override
+    public String toString() {
+        return "Asset{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category=" + (category_id != null ? category_id.getName() : "null") +
+                '}';
     }
 }
 

@@ -15,8 +15,8 @@
     <string name="zimmetlerim">Zimmetlerim</string>
     <string name="tumDemirbaslar">Tüm Demirbaşlar</string>
     <string name="kategoriCesidi">Kategori Çeşidi : </string>
-    <string name="toplamZimmet">Toplam Zimmet : </string>
-    <string name="toplamDemirbas">Toplam Demirbaş : </string>
+    <string name="toplamZimmet">Toplam Zimmet</string>
+    <string name="toplamDemirbas">Toplam Demirbaş</string>
     <string name="yoneticiIslemleri">Yönetici İşlemleri</string>
     <string name="personelIslemleri">Personel İşlemleri</string>
     <string name="demisrbasIslemleri">Demirbaş İşlemleri</string>
@@ -63,6 +63,7 @@
     <string name="personeller">Personeller</string>
     <string name="sayfadaListelenenPersonelSayisi">.. personel listelendi</string>
     <string name="cikisYap">Çıkış Yap</string>
+    <string name="zimmetEnvanterim">"Zimmet Envanterim"</string>
 
 
 </resources>

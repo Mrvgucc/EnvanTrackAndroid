@@ -53,7 +53,22 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
         Asset asset = demirbasBilgiler.get(position);
 
         int kategoriId = asset.getCategory_id().getId();
-        holder.kategoriAdi.setText(asset.getCategory_id().getName());
+
+        switch (kategoriId) {
+            case 1:
+                holder.kategoriAdi.setText("Teknolojik Ürün");
+                break;
+            case 2:
+                holder.kategoriAdi.setText("Ofis Mobilyaları");
+                break;
+            case 3:
+                holder.kategoriAdi.setText("Mutfak Araç Gereçleri");
+                break;
+            default:
+                holder.kategoriAdi.setText("Bilinmeyen Kategori");
+                break;
+        }
+
         holder.demirbasAdi.setText(asset.getName());
         String usageStatu = asset.getUsage_status();
         if (usageStatu.equals("active")) {
@@ -109,7 +124,23 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimBag
         if (asset.getIsEditMode()) {
 
             holder.editText6.setText(asset.getName());
-            holder.editText5.setText(asset.getCategory_id().toString());
+            String categoryName = "";
+            switch (asset.getCategory_id().getId()) {
+                case 1:
+                    categoryName = "Teknolojik Ürün";
+                    break;
+                case 2:
+                    categoryName = "Ofis Mobilyaları";
+                    break;
+                case 3:
+                    categoryName = "Mutfak Araç Gereçleri";
+                    break;
+                default:
+                    categoryName = "Bilinmeyen";
+                    break;
+            }
+            holder.editText5.setText(categoryName);
+
 
             holder.check.setOnClickListener(new View.OnClickListener() {
                 @Override

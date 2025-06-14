@@ -11,6 +11,9 @@ public class Login {
     @SerializedName("token_type")
     @Expose
     private String tokenType;
+    @SerializedName("id")
+    @Expose
+    private int id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -83,4 +86,7 @@ public class Login {
         this.status = status;
     }
 
+    public int getId() {
+        return id;
+    }
 }

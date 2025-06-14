@@ -92,6 +92,7 @@ public class LoginFragment extends Fragment {
                         editor = sp.edit();
                         editor.putString("accesToken" , accessToken);
                         editor.putString("token_type", login.getTokenType());
+                        editor.putInt("id", login.getId());
                         editor.putString("name", login.getName());
                         editor.putString("surname", login.getSurname());
                         editor.putString("email", login.getEmail());
@@ -99,12 +100,13 @@ public class LoginFragment extends Fragment {
                         editor.putString("phone",login.getPhone());
                         editor.commit();
                         Log.e("Token Preferences a kaydedildi" , accessToken);
+                        Log.e("Ad Preferences a kaydedildi" , login.getName());
                         tasarim.progressBar.setVisibility (View.GONE);
                         view.setVisibility(View.GONE);
                         if (login.getStatus().equals("personal")){
                             Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainPersonalFragment);
                         }
-                        else {
+                        else if (login.getStatus().equals("manager")){
                             Navigation.findNavController(v).navigate(R.id.action_loginFragment2_to_mainManagerFragment);
                         }
                         // login basarili oldugu zaman diger ekran yuklenene kadar circular progressbar ekranda gorunsun

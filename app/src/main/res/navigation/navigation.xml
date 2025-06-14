@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainPersonalFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_mainPersonalFragment_to_personelZimmetleriFragment"
+            app:destination="@id/personelZimmetleriFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainManagerFragment"
@@ -69,4 +72,9 @@
             android:id="@+id/action_personelIslemlerFragment_to_personelEkleFragment"
             app:destination="@id/personelEkleFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/personelZimmetleriFragment"
+        android:name="com.example.designs.PersonelZimmetleriFragment"
+        android:label="PersonelZimmetleriFragment"
+        tools:layout="@layout/fragment_personel_zimmetleri"/>
 </navigation>

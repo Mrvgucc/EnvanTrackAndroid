@@ -175,7 +175,7 @@ public class Islemler {
         void onError(String error);
     }
 
-    public void kategoriListeleme(demirbasListelemeCallback callback) {
+    public void kategoriListeleme(kategoriListelemeCallback callback) {
         methodInterface.kategoriListeleme().enqueue(new Callback<CategoryListResponse>() {
             @Override
             public void onResponse(Call<CategoryListResponse> call, Response<CategoryListResponse> response) {
@@ -193,7 +193,7 @@ public class Islemler {
         });
     }
 
-    public interface demirbasListelemeCallback {
+    public interface kategoriListelemeCallback {
         void onCategoriesLoaded(List<Category> categories);
 
         void onError(String errorMessage);
@@ -323,6 +323,57 @@ public class Islemler {
     public interface cikisCallBack {
         void onSuccess(String message);
 
+        void onError(String error);
+    }
+
+    public void assetListWithId(String token, int id, AssetListWithIdCallback callback){
+        methodInterface.assetListWithResponse(token,id).enqueue(new Callback<AssetListWithIdResponse>() {
+            @Override
+            public void onResponse(Call<AssetListWithIdResponse> call, Response<AssetListWithIdResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    callback.onSucces(response.body().getAssets(),response.body().getCount());
+                }
+                else{
+                    callback.onError("Yanıt başarısız." + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AssetListWithIdResponse> call, Throwable t) {
+                callback.onError(t.getMessage());
+            }
+        });
+    }
+
+    public interface AssetListWithIdCallback{
+            void onSucces(List<Asset> assets,int totalAsset);
+        void onError(String error);
+    }
+
+
+    public void demirbasListeleme(demirbasListelemeCallBack callBack){
+        methodInterface.demirbasListeleme().enqueue(new Callback<DemirbasListlemeResponse>() {
+            @Override
+            public void onResponse(Call<DemirbasListlemeResponse> call, Response<DemirbasListlemeResponse> response) {
+                if (response.isSuccessful() && response.body()!= null){
+                    callBack.onSuccess(response.body().getAssets(),response.body().getCount());
+                    Log.e("Asset Sayisi: " , String.valueOf(response.body().getCount()));
+                    Log.e("Asset listesi" , String.valueOf(response.body().getAssets()));
+                }
+                else {
+                    callBack.onError("Yanit basariiz:" + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DemirbasListlemeResponse> call, Throwable t){
+                callBack.onError(t.getMessage());
+            }
+        });
+    }
+
+    public interface demirbasListelemeCallBack{
+        void onSuccess(List<Asset> assets, int totalAsset);
         void onError(String error);
     }
 

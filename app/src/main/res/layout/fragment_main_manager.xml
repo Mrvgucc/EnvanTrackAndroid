@@ -53,7 +53,6 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text='@{@string/hosgeldin + employeeInfo.employeeInfoLiveData.name + " "  + employeeInfo.employeeInfoLiveData.surname}'
                     android:textColor="@color/white"
                     android:textSize="20sp" />
@@ -62,7 +61,6 @@
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@{employeeInfo.employeeInfoLiveData.email }"
                     android:textColor="@color/white"
                     android:textSize="13sp" />

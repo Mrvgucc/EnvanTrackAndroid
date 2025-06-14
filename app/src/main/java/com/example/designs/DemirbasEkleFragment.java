@@ -42,7 +42,7 @@ public class DemirbasEkleFragment extends Fragment {
         Islemler listeleme = new Islemler();
 
         AutoCompleteTextView autoCompleteTextView = tasarim.autoCompleteTextView;
-        listeleme.kategoriListeleme(new Islemler.demirbasListelemeCallback() {
+        listeleme.kategoriListeleme(new Islemler.kategoriListelemeCallback() {
             @Override
             public void onCategoriesLoaded(List<Category> categories) {
                 ArrayAdapter<Category> adapter = new ArrayAdapter<>(
